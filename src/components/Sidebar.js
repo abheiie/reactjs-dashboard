@@ -1,21 +1,22 @@
 import React, {Fragment} from 'react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     return (
     <ul id ="toggle-ul" className="sidebar navbar-nav">
 
     <li className="nav-item active">
-    <a className="nav-link" href="localdashboard.html"> 
+    <Link className="nav-link" to="/"> 
     <i className="fa fa-map-marker" aria-hidden="true"></i> 
     <span>Local Dashboard</span> 
-    </a> 
+    </Link> 
     </li>
 
     <li className="nav-item "> 
-    <a className="nav-link " href="stratigicdashboard.html" id="pagesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+    <Link className="nav-link " to="stratigic-dashboard" id="pagesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
     <img src="img/Iconawesome-chess-knight.png" width="12px" />
     <span>Stratigic Dashboard</span>
-    </a>
+    </Link>
     </li>
 
     <li className="nav-item light-grey" > 

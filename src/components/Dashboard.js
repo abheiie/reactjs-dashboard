@@ -8,26 +8,37 @@ import TotalCards from "./TotalCards"
 import Table from './Table'
 import Footbar from './Footbar'
 import ScrollToTop from './ScrollToTop'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import LocalDashboard from './LocalDashboard'
+import StratigicDashboard from './StratigicDashboard'
 
 
 export const Dashboard = () => {
     return (
-        <>
+        <Router>
             <Header />
             <div id="wrapper">
                 <Sidebar />
                 <div id="content-wrapper">
                     <div className="container-fluid ">
-                    <Breadcrumbs />
-                    <TotalCards />
-                    <CountrySegment />
-                    <ActiveThreatsBlockedIps />
-                    <Table />
+                <Switch>
+                    <Route path="/stratigic-dashboard">
+                    <StratigicDashboard />
+                    </Route>
+                    <Route path="/">
+                    <LocalDashboard/>
+                    </Route>
+                </Switch>
                 </div>
                 <Footbar />
                 </div>
             </div>
             <ScrollToTop />
-        </>
+        </Router>
     )
 }
