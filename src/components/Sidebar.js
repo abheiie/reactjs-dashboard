@@ -1,19 +1,35 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
+
+    const [active, setActive] = useState(false);
+
+    function handleActive(id) {
+
+        if(id == "local-dashboard"){
+            document.getElementById("local-dashboard").classList.add("active");
+            document.getElementById("stratigic-dashboard").classList.remove("active");
+        }else if(id == "stratigic-dashboard"){
+            document.getElementById("local-dashboard").classList.remove("active");
+            document.getElementById("stratigic-dashboard").classList.add("active");
+        }
+    }
+
+
     return (
     <ul id ="toggle-ul" className="sidebar navbar-nav">
 
-    <li className="nav-item active">
-    <Link className="nav-link" to="/"> 
+    <li id = "local-dashboard" className="nav-item active">
+    <Link className="nav-link" to="/" onClick={ () => handleActive("local-dashboard")}> 
     <i className="fa fa-map-marker" aria-hidden="true"></i> 
     <span>Local Dashboard</span> 
     </Link> 
     </li>
 
-    <li className="nav-item "> 
-    <Link className="nav-link " to="stratigic-dashboard" id="pagesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+    <li className="nav-item" id="stratigic-dashboard"> 
+    <Link className="nav-link " to="stratigic-dashboard" onClick={ () => handleActive("stratigic-dashboard")}
+     id="pagesDropdown1"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
     <img src="img/Iconawesome-chess-knight.png" width="12px" />
     <span>Stratigic Dashboard</span>
     </Link>
