@@ -1,10 +1,12 @@
 import React from 'react'
+import Breadcrumbs from './Breadcrumbs'
 
 const StratigicDashboard = () => {
     return (
-        <div>
-            <h1 style={{background:"red"}}> StratigicDashboard </h1>
-        </div>
+        <>
+            <Breadcrumbs text={"Stratigic Dashboard"} />
+
+        </>
     )
 }
 

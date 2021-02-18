@@ -12,7 +12,7 @@ import ScrollToTop from './ScrollToTop'
 const LocalDashboard = () => {
     return (
         <>
-            <Breadcrumbs />
+            <Breadcrumbs text={"Local Dashboard"}/>
             <TotalCards />
             <CountrySegment />
             <ActiveThreatsBlockedIps />
