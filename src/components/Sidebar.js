@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
 
     const [active, setActive] = useState(false);
+    useEffect(() => {
+        // Update the document title using the browser API
+        document.getElementById("local-dashboard").classList.add("active");
+    });
 
     function handleActive(id) {
 
